@@ -640,6 +640,7 @@ public class GameViewModel {
     public boolean newRound(){
         if(newRoundButtonCanClick){
             gameModel.newRound();
+            showedHandsList = new ArrayList<Integer>();
             setNewRoundButtonCanClick(false);
             return true;
         }else{
