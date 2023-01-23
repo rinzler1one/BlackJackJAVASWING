@@ -287,10 +287,8 @@ public class GameViewModel {
         if(splitButtonCanClick){
             //perform some more input validation. check to see if player has enough money to split the hand even if the hand can split
             if(gameModel.getPlayer().getSplitHand().size() > 0){ //if the player split the hand
-                int totalNumberOfHands = 0;
-                for(int i=0; i<gameModel.getPlayer().getSplitHand().size(); i++){
-                    totalNumberOfHands += gameModel.getPlayer().getSplitHand().get(i).size();
-                }
+                int totalNumberOfHands = gameModel.getPlayer().getSplitHand().size() + 1;
+                
                 if(gameModel.getPlayer().getTotalAmount() >= gameModel.getPlayer().getBetAmount() * totalNumberOfHands){
                     gameModel.split(gameModel.getDeck());
                     return true;
