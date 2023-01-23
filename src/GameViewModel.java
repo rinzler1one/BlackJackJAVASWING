@@ -296,7 +296,7 @@ public class GameViewModel {
                     return false;
                 }
             }else{
-                if(gameModel.getPlayer().getTotalAmount() >= gameModel.getPlayer().getHand().size() * gameModel.getPlayer().getBetAmount()){
+                if(gameModel.getPlayer().getTotalAmount() >= 2 * gameModel.getPlayer().getBetAmount()){
                     gameModel.split(gameModel.getDeck());
                     return true;
                 }else{
