@@ -215,8 +215,11 @@ public class GameView extends JFrame {
                         if(!gameViewModel.getGameModel().getPlayer().getSplitHand().get(i).contains(-1)){
                             //clear all the labels first
                             for(int a=0; a<playerCardLabelsList.size(); a++){
-                                ImageIcon blank = new ImageIcon("C:\\Users\\Kevin\\IdeaProjects\\practiceproject\\src\\Untitled.png");
+                                URL imageUrl = getClass().getClassLoader().getResource("images/Untitled.png");
+                                ImageIcon blank = new ImageIcon(imageUrl);
                                 playerCardLabelsList.get(a).setIcon(blank);
+                                
+                          
                             }
                             for(int x=0; x<gameViewModel.getGameModel().getPlayer().getSplitHand().get(i).size(); x++){ //display the card icons for each split hand in the appropiate label
                                 if(gameViewModel.getGameModel().getPlayer().getSplitHand().get(i).get(x) != -1){
